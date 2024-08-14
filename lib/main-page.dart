@@ -53,6 +53,18 @@ class _MainPageState extends State<MainPage> {
                         fontSize: 50,
                         fontWeight: FontWeight.bold
                         ),),
+                        Row(
+                          children: [
+                            FloatingActionButton(
+                            onPressed: null,
+                            child: Icon(Icons.remove, size: 30,),
+                            ),
+                            SizedBox(width: 20,),
+                            FloatingActionButton(
+                            onPressed: null,
+                            child: Icon(Icons.add, size: 30,),)
+                            ],
+                        ),
                         
                       ],
                     ),
@@ -62,11 +74,40 @@ class _MainPageState extends State<MainPage> {
                     padding: EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Icon(Icons.female, size: 150,),
-                        Text("Female"),
+                        Text("wight"),
+                        Text("56",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 240, 87, 87),
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold
+                        ),),
+                        Row(
+                          children: [
+                            FloatingActionButton(
+                            onPressed: null,
+                            child: Icon(Icons.remove, size: 30,),
+                            ),
+                            SizedBox(width: 20,),
+                            FloatingActionButton(
+                            onPressed: null,
+                            child: Icon(Icons.add, size: 30,),)
+                            ],
+                        ),
                       ],
                     ),
+                    
                   )
+                ],
+              ),
+              Column(
+                children: [
+                  Text("BMI"),
+                  Text("22.00",
+                  style: TextStyle(
+                          color: Color.fromARGB(255, 240, 87, 87),
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold
+                        ),)
                 ],
               )
             ],
