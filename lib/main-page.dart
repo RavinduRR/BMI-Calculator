@@ -15,6 +15,7 @@ class _MainPageState extends State<MainPage> {
       body: SafeArea (
         child: Container(
           color: Colors.white,
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: const Column(
             children: [
               Row(
@@ -41,6 +42,7 @@ class _MainPageState extends State<MainPage> {
                 ],
                 
               ),
+              SizedBox(height: 50,),
               Row(
                 children: [
                   Padding(
@@ -49,11 +51,8 @@ class _MainPageState extends State<MainPage> {
                       children: [
                         Text("Hight"),
                         Text("176",
-                        style: TextStyle(
-                        color: Color.fromARGB(255, 240, 87, 87),
-                        fontSize: 50,
-                        fontWeight: FontWeight.bold
-                        ),),
+                        style: kInputLableColor
+                        ),
                         Row(
                           children: [
                             FloatingActionButton(
@@ -97,16 +96,17 @@ class _MainPageState extends State<MainPage> {
                   )
                 ],
               ),
+              SizedBox(height: 50,),
               Column(
-                children: [
+                  children: [
                   Text("BMI"),
-                  Text("22.00",
-                  style: kInputLableColor,
-                  ),
-                ],
-              )
-            ],
-          )
+                  Text("22.22",
+                  style: kInputLableColor),
+                  ]
+    ),
+  ],
+),
+
         ),
       ),
     );
