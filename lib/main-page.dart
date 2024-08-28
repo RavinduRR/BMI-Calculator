@@ -1,3 +1,4 @@
+import 'package:bmi_calculater/styles.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -76,11 +77,8 @@ class _MainPageState extends State<MainPage> {
                       children: [
                         Text("wight"),
                         Text("56",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 240, 87, 87),
-                          fontSize: 50,
-                          fontWeight: FontWeight.bold
-                        ),),
+                        style: kInputLableColor,
+                        ),
                         Row(
                           children: [
                             FloatingActionButton(
@@ -103,11 +101,8 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   Text("BMI"),
                   Text("22.00",
-                  style: TextStyle(
-                          color: Color.fromARGB(255, 240, 87, 87),
-                          fontSize: 50,
-                          fontWeight: FontWeight.bold
-                        ),)
+                  style: kInputLableColor,
+                  ),
                 ],
               )
             ],
