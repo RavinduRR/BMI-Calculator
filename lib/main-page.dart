@@ -9,22 +9,25 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  int height = 176;
+  int weight = 56;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea (
+      body: SafeArea(
         child: Container(
           color: Colors.white,
           padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: const Column(
+          child: Column(
             children: [
-              Row(
+              const Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Icon(Icons.male,size: 150, ),
+                        Icon(Icons.male, size: 150),
                         Text("Male"),
                       ],
                     ),
@@ -34,81 +37,108 @@ class _MainPageState extends State<MainPage> {
                     padding: EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Icon(Icons.female, size: 150,),
+                        Icon(Icons.female, size: 150),
                         Text("Female"),
                       ],
                     ),
                   )
                 ],
-                
               ),
-              SizedBox(height: 50,),
+              const SizedBox(height: 50),
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Text("Hight"),
-                        Text("176",
-                        style: kInputLableColor
+                        const Text("Height"),
+                        Text(
+                          "$height cm",
+                          style: kInputLableColor,
                         ),
                         Row(
                           children: [
                             FloatingActionButton(
-                            onPressed: null,
-                            child: Icon(Icons.remove, size: 30,),
+                              onPressed: onHeightMinus,
+                              child: const Icon(Icons.remove, size: 30),
                             ),
-                            SizedBox(width: 20,),
+                            const SizedBox(width: 20),
                             FloatingActionButton(
-                            onPressed: null,
-                            child: Icon(Icons.add, size: 30,),)
-                            ],
+                              onPressed: onHeightAdd,
+                              child: const Icon(Icons.add, size: 30),
+                            ),
+                          ],
                         ),
-                        
                       ],
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Text("wight"),
-                        Text("56",
-                        style: kInputLableColor,
+                        const Text("Weight"),
+                        Text(
+                          "$weight kg",
+                          style: kInputLableColor,
                         ),
                         Row(
                           children: [
                             FloatingActionButton(
-                            onPressed: null,
-                            child: Icon(Icons.remove, size: 30,),
+                              onPressed: onWeightMinus,
+                              child: const Icon(Icons.remove, size: 30),
                             ),
-                            SizedBox(width: 20,),
+                            const SizedBox(width: 20),
                             FloatingActionButton(
-                            onPressed: null,
-                            child: Icon(Icons.add, size: 30,),)
-                            ],
+                              onPressed: onWeightAdd,
+                              child: const Icon(Icons.add, size: 30),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                    
                   )
                 ],
               ),
-              SizedBox(height: 50,),
+              const SizedBox(height: 50),
               Column(
-                  children: [
-                  Text("BMI"),
-                  Text("22.22",
-                  style: kInputLableColor),
-                  ]
-    ),
-  ],
-),
-
+                children: [
+                  const Text("BMI"),
+                  Text(
+                    (weight / ((height / 100) * (height / 100)))
+                        .toStringAsFixed(2),
+                    style: kInputLableColor,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  void onHeightMinus() {
+    setState(() {
+      height--;
+    });
+  }
+
+  void onHeightAdd() {
+    setState(() {
+      height++;
+    });
+  }
+
+  void onWeightMinus() {
+    setState(() {
+      weight--;
+    });
+  }
+
+  void onWeightAdd() {
+    setState(() {
+      weight++;
+    });
   }
 }
